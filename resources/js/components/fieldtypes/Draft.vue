@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="!published">
         <button
             type="button"
             class="btn"
@@ -15,11 +15,19 @@
 export default {
 
     mixins: [Fieldtype],
+    inject: [
+        'storeName'
+    ],
 
     data() {
         return {
             //
         };
+    },
+    computed: {
+        published() {
+            return this.$store.state.publish[this.storeName].values.published;
+        }
     },
     methods: {
         copyToClipboard() {
