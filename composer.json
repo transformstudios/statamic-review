@@ -1,0 +1,19 @@
+{
+    "name": "transformstudios/drafts",
+    "autoload": {
+        "psr-4": {
+            "Transformstudios\\Drafts\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Drafts",
+            "description": "Drafts addon"
+        },
+        "laravel": {
+            "providers": [
+                "Transformstudios\\Drafts\\ServiceProvider"
+            ]
+        }
+    }
+}
