@@ -1,6 +1,6 @@
 <?php
 
-namespace Transformstudios\Drafts\Fieldtypes;
+namespace TransformStudios\Drafts\Fieldtypes;
 
 use Statamic\Fields\Fieldtype;
 

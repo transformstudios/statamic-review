@@ -1,7 +1,7 @@
 {
     "name": "transformstudios/drafts",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8.0",
         "laravel/framework": "^7.0 || ^8.0",
         "pixelfear/composer-dist-plugin": "^0.1",
         "statamic/cms": "^3.0"
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Transformstudios\\Drafts\\": "src"
+            "TransformStudios\\Drafts\\": "src"
         }
     },
     "description": "Allow users to share unpublished entries",
@@ -36,7 +36,7 @@
         },
         "laravel": {
             "providers": [
-                "Transformstudios\\Drafts\\ServiceProvider"
+                "TransformStudios\\Drafts\\ServiceProvider"
             ]
         }
     }

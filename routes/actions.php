@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Transformstudios\Drafts\Http\Controllers\DraftController;
+use TransformStudios\Drafts\Http\Controllers\ViewDraftController;
 
 Route::name('drafts.')->group(function () {
     Route::get('{id}', [DraftController::class, '__invoke'])->name('show');

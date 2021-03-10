@@ -1,9 +1,9 @@
 <?php
 
-namespace Transformstudios\Drafts;
+namespace TransformStudios\Drafts;
 
 use Statamic\Providers\AddonServiceProvider;
-use Transformstudios\Drafts\Fieldtypes\Draft;
+use TransformStudios\Drafts\Fieldtypes\Draft;
 
 class ServiceProvider extends AddonServiceProvider
 {
