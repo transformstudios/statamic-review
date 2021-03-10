@@ -1,5 +1,5 @@
 {
-    "name": "transformstudios/drafts",
+    "name": "transformstudios/review",
     "require": {
         "php": "^7.4 || ^8.0",
         "laravel/framework": "^7.0 || ^8.0",
@@ -14,10 +14,10 @@
     },
     "autoload": {
         "psr-4": {
-            "TransformStudios\\Drafts\\": "src"
+            "TransformStudios\\Review\\": "src"
         }
     },
-    "description": "Allow users to share unpublished entries",
+    "description": "Allow external users to review unpublished content, including revisions",
     "authors": [
         {
             "name": "Erin Dalzell",
@@ -27,16 +27,16 @@
     ],
     "extra": {
         "download-dist": {
-            "url": "https://github.com/transformstudios/statamic-drafts-v3/releases/download/{$version}/dist.tar.gz",
+            "url": "https://github.com/transformstudios/statamic-review/releases/download/{$version}/dist.tar.gz",
             "path": "dist"
         },
         "statamic": {
-            "name": "Drafts",
-            "description": "Drafts addon"
+            "name": "Review",
+            "description": "Allow external users to review unpublished content, including revisions"
         },
         "laravel": {
             "providers": [
-                "TransformStudios\\Drafts\\ServiceProvider"
+                "TransformStudios\\Review\\ServiceProvider"
             ]
         }
     }

@@ -6,7 +6,7 @@
             :disabled="!show"
             @click="copyToClipboard"
         >
-            Copy Draft URL to Clipboard
+            Copy Review URL to Clipboard
         </button>
     </div>
 </template>
@@ -27,7 +27,7 @@ export default {
     },
     computed: {
         entryUrl() {
-            return this.meta.site_url + '/!/drafts/' + this.id;
+            return this.meta.site_url + '/!/review/' + this.id;
         },
         id() {
             return this.$store.state.publish[this.storeName].values.id;
@@ -43,7 +43,7 @@ export default {
     methods: {
         copyToClipboard() {
             navigator.clipboard.writeText(this.entryUrl);
-            this.$toast.success(__('Draft URL copied to clipboard'));
+            this.$toast.success(__('Review URL copied to clipboard'));
         },
 
     }

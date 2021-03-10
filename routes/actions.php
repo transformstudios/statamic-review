@@ -1,6 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use TransformStudios\Drafts\Http\Controllers\ViewDraftController;
+use TransformStudios\Review\Http\Controllers\ReviewController;
 
-Route::get('{id}', [ViewDraftController::class, '__invoke'])->name('drafts.show');
+Route::get('{id}', [ReviewController::class, '__invoke'])->name('review.show');

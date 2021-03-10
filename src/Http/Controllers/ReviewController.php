@@ -1,12 +1,12 @@
 <?php
 
-namespace TransformStudios\Drafts\Http\Controllers;
+namespace TransformStudios\Review\Http\Controllers;
 
 use Statamic\Entries\Entry;
 use Statamic\Facades\Entry as EntryAPI;
 use Statamic\Http\Controllers\Controller;
 
-class ViewDraftController extends Controller
+class ReviewController extends Controller
 {
     public function __invoke(string $id)
     {

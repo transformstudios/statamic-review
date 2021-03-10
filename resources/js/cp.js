@@ -1,5 +1,5 @@
-import DraftField from './components/fieldtypes/Draft.vue';
+import CopyReviewUrlButton from './components/fieldtypes/CopyReviewUrlButton.vue';
 
 Statamic.booting(() => {
-    Statamic.$components.register('draft-fieldtype', DraftField);
+    Statamic.$components.register('copy_review_url-fieldtype', CopyReviewUrlButton);
 });

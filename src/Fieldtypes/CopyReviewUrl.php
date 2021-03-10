@@ -1,12 +1,12 @@
 <?php
 
-namespace TransformStudios\Drafts\Fieldtypes;
+namespace TransformStudios\Review\Fieldtypes;
 
 use Statamic\Fields\Fieldtype;
 
-class Draft extends Fieldtype
+class CopyReviewUrl extends Fieldtype
 {
-    protected $component = 'draft';
+    protected $component = 'copy_review_url';
 
     /**
      * The blank/default value.

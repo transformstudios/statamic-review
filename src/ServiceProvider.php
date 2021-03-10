@@ -1,19 +1,19 @@
 <?php
 
-namespace TransformStudios\Drafts;
+namespace TransformStudios\Review;
 
 use Statamic\Providers\AddonServiceProvider;
-use TransformStudios\Drafts\Actions\Draft as DraftAction;
-use TransformStudios\Drafts\Fieldtypes\Draft;
+use TransformStudios\Review\Actions\OpenReview;
+use TransformStudios\Review\Fieldtypes\CopyReviewUrl;
 
 class ServiceProvider extends AddonServiceProvider
 {
     protected $actions = [
-        DraftAction::class,
+        OpenReview::class,
     ];
 
     protected $fieldtypes = [
-        Draft::class,
+        CopyReviewUrl::class,
     ];
 
     protected $routes = [
