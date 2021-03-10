@@ -18,7 +18,7 @@ class OpenReview extends Action
     public function visibleTo($item)
     {
         return $item instanceof Entry &&
-               ! $item->published() &&
+               (! $item->published() || $item->hasWorkingCopy()) &&
                in_array($item->collectionHandle(), config('review.collections'));
     }
 
