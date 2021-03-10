@@ -4,7 +4,7 @@ namespace TransformStudios\Review;
 
 use Statamic\Providers\AddonServiceProvider;
 use TransformStudios\Review\Actions\OpenReview;
-use TransformStudios\Review\Fieldtypes\CopyReviewUrl;
+use TransformStudios\Review\Fieldtypes\Review;
 
 class ServiceProvider extends AddonServiceProvider
 {
@@ -13,7 +13,7 @@ class ServiceProvider extends AddonServiceProvider
     ];
 
     protected $fieldtypes = [
-        CopyReviewUrl::class,
+        Review::class,
     ];
 
     protected $routes = [

@@ -4,7 +4,7 @@ namespace TransformStudios\Review\Fieldtypes;
 
 use Statamic\Fields\Fieldtype;
 
-class CopyReviewUrl extends Fieldtype
+class Review extends Fieldtype
 {
     protected $component = 'copy_review_url';
 
