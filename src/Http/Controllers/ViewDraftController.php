@@ -13,6 +13,10 @@ class ViewDraftController extends Controller
         /** @var Entry */
         $entry = EntryAPI::find($id);
 
+        if ($entry->hasWorkingCopy()) {
+            return $entry->fromWorkingCopy()->published(true);
+        }
+
         if ($entry->published()) {
             return redirect($entry->url());
         }

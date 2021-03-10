@@ -19,8 +19,12 @@ class Draft extends Fieldtype
 
     public function preload()
     {
+        /** @var \Statamic\Entries\Entry */
+        $entry = $this->field->parent();
+
         return [
-            'site_url' => $this->field->parent()->site()->url(),
+            'site_url' => $entry->site()->url(),
+            'has_revision' => $entry->hasWorkingCopy(),
         ];
     }
 

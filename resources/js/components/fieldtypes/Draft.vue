@@ -3,7 +3,7 @@
         <button
             type="button"
             class="btn"
-            :disabled="published"
+            :disabled="!show"
             @click="copyToClipboard"
         >
             Copy Draft URL to Clipboard
@@ -34,6 +34,10 @@ export default {
         },
         published() {
             return this.$store.state.publish[this.storeName].values.published;
+        },
+
+        show() {
+            return this.meta.has_revision || !this.published;
         }
     },
     methods: {
