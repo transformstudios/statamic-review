@@ -17,6 +17,13 @@ class Draft extends Fieldtype
     {
     }
 
+    public function preload()
+    {
+        return [
+            'site_url' => $this->field->parent()->site()->url(),
+        ];
+    }
+
     /**
      * Pre-process the data before it gets sent to the publish page.
      *
