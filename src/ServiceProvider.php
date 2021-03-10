@@ -3,10 +3,15 @@
 namespace TransformStudios\Drafts;
 
 use Statamic\Providers\AddonServiceProvider;
+use TransformStudios\Drafts\Actions\Draft as DraftAction;
 use TransformStudios\Drafts\Fieldtypes\Draft;
 
 class ServiceProvider extends AddonServiceProvider
 {
+    protected $actions = [
+        DraftAction::class,
+    ];
+
     protected $fieldtypes = [
         Draft::class,
     ];
