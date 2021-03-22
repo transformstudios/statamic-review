@@ -2,6 +2,7 @@
 
 namespace TransformStudios\Review\Fieldtypes;
 
+use Statamic\Entries\Collection;
 use Statamic\Fields\Fieldtype;
 
 class Review extends Fieldtype
@@ -21,6 +22,12 @@ class Review extends Fieldtype
     {
         /** @var \Statamic\Entries\Entry */
         $entry = $this->field->parent();
+
+        // when it's a new entry the "parent" is the collection
+        // in this case, we can't show it anyway so return empty
+        if ($entry instanceof Collection) {
+            return [];
+        }
 
         return [
             'site_url' => $entry->site()->url(),
