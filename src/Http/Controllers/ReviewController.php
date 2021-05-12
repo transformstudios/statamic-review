@@ -21,6 +21,9 @@ class ReviewController extends Controller
             return redirect($entry->url());
         }
 
+        // indicate that we are "reviewing" the entry
+        $entry->setSupplement('review_addon', true);
+
         return $entry->published(true);
     }
 }
