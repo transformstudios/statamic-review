@@ -21,7 +21,9 @@ class Review extends Fieldtype
     public function preload()
     {
         /** @var \Statamic\Entries\Entry */
-        $entry = $this->field->parent();
+        if (! $entry = $this->field->parent()) {
+            return [];
+        }
 
         // when it's a new entry the "parent" is the collection
         // in this case, we can't show it anyway so return empty
