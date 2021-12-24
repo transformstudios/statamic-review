@@ -3,6 +3,7 @@
 namespace TransformStudios\Review\Fieldtypes;
 
 use Statamic\Entries\Collection;
+use Statamic\Facades\Site;
 use Statamic\Fields\Fieldtype;
 
 class Review extends Fieldtype
@@ -20,7 +21,6 @@ class Review extends Fieldtype
 
     public function preload()
     {
-        /** @var \Statamic\Entries\Entry */
         if (! $entry = $this->field->parent()) {
             return [];
         }
@@ -32,7 +32,7 @@ class Review extends Fieldtype
         }
 
         return [
-            'site_url' => $entry->site()->url(),
+            'site_url' => Site::default()->url(),
             'has_revision' => $entry->hasWorkingCopy(),
         ];
     }
