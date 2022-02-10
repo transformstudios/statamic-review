@@ -19,6 +19,11 @@ class Review extends Fieldtype
     {
     }
 
+    public function icon()
+    {
+        return file_get_contents(__DIR__ . '/../../resources/svg/review-icon.svg');
+    }
+
     public function preload()
     {
         if (! $entry = $this->field->parent()) {
