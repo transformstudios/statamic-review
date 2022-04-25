@@ -2,7 +2,7 @@
     "name": "transformstudios/review",
     "require": {
         "php": "^7.4 || ^8.0",
-        "laravel/framework": "^7.0 || ^8.0",
+        "laravel/framework": "^7.0 || ^8.0 || ^9.9",
         "pixelfear/composer-dist-plugin": "^0.1",
         "statamic/cms": "^3.0"
     },
