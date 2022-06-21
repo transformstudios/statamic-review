@@ -1,5 +1,14 @@
 # Changelog
 
+## v3.3.2 - 2022-06-21
+
+### Changes
+
+### 🐛 Fixed
+
+- Update release action order @edalzell (#14)
+- Fix release assets @edalzell (#13)
+
 ## v3.3.1 - 2022-06-21
 
 ### Changes
