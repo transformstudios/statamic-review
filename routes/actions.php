@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Statamic\Http\Middleware\AddViewPaths;
 use TransformStudios\Review\Http\Controllers\ReviewController;
 use TransformStudios\Review\Http\Middleware\SetSite;
 
