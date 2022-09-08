@@ -1,5 +1,17 @@
 # Changelog
 
+## v3.4.0 - 2022-09-08
+
+### 🐛 Fixed
+
+- Support `nocache` tag [@edalzell](https://github.com/edalzell) (#18)
+
+### 🔧 Improved
+
+- Use proper site url [@edalzell](https://github.com/edalzell) (#16)
+- Simplify GH Actions [@edalzell](https://github.com/edalzell) (#17)
+- 🔄 Synced file(s) with edalzell/.github [@edalzell](https://github.com/edalzell) (#15)
+
 ## v3.3.2 - 2022-06-21
 
 ### Changes
