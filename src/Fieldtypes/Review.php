@@ -21,7 +21,7 @@ class Review extends Fieldtype
 
     public function icon()
     {
-        return file_get_contents(__DIR__ . '/../../resources/svg/review-icon.svg');
+        return file_get_contents(__DIR__.'/../../resources/svg/review-icon.svg');
     }
 
     public function preload()
@@ -45,7 +45,7 @@ class Review extends Fieldtype
     /**
      * Pre-process the data before it gets sent to the publish page.
      *
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array|mixed
      */
     public function preProcess($data)
@@ -56,7 +56,7 @@ class Review extends Fieldtype
     /**
      * Process the data before it gets saved.
      *
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array|mixed
      */
     public function process($data)
