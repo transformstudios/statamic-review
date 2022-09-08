@@ -2,7 +2,9 @@
 
 namespace TransformStudios\Review\Fieldtypes;
 
+use Illuminate\Support\Arr;
 use Statamic\Entries\Collection;
+use Statamic\Entries\Entry;
 use Statamic\Facades\Site;
 use Statamic\Fields\Fieldtype;
 
@@ -37,7 +39,7 @@ class Review extends Fieldtype
         }
 
         return [
-            'site_url' => Site::default()->url(),
+            'site_url' => $this->makeUrl($entry),
             'has_revision' => $entry->hasWorkingCopy(),
         ];
     }
@@ -62,5 +64,13 @@ class Review extends Fieldtype
     public function process($data)
     {
         return $data;
+    }
+
+    private function makeUrl(Entry $entry): string
+    {
+        $parsed = parse_url(Site::get($entry->locale())->url());
+        $port = Arr::has($parsed, 'port') ? ":{$parsed['port']}" : '';
+
+        return $parsed['scheme'].'://'.$parsed['host'].$port;
     }
 }
