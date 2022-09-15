@@ -1,17 +1,17 @@
 <?php
 
-namespace Statamic\Tokens\Handlers;
+namespace TransformStudios\Review;
 
 use Closure;
 use Statamic\Contracts\Tokens\Token;
+use Statamic\Facades\Entry;
 
-class LivePreview
+class TokenHandler
 {
     public function handle(Token $token, $request, Closure $next)
     {
-        $id = $token->get('id'); // 123
-
-        $entry = Entry::find($id);
+        /** @var \Statamic\Entries\Entry */
+        $entry = Entry::find($token->get('id'));
 
         if ($entry->published()) {
             return redirect($entry->url());
