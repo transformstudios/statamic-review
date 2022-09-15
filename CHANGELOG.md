@@ -1,5 +1,19 @@
 # Changelog
 
+## v3.5.0 - 2022-09-15
+
+### 🚀 New
+
+- Use the Live Preview tokens [@edalzell](https://github.com/edalzell) (#20)
+
+### 🐛 Fixed
+
+- Remove unused Action [@edalzell](https://github.com/edalzell) (#21)
+
+### 🔧 Improved
+
+- 🔄 Synced file(s) with edalzell/.github [@edalzell](https://github.com/edalzell) (#19)
+
 ## v3.4.0 - 2022-09-08
 
 ### 🐛 Fixed
