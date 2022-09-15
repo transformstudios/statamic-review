@@ -68,9 +68,11 @@ class Review extends Fieldtype
 
     private function makeUrl(Entry $entry): string
     {
-        $parsed = parse_url(Site::get($entry->locale())->url());
-        $port = Arr::has($parsed, 'port') ? ":{$parsed['port']}" : '';
+        /** @var \Statamic\Tokens\Token */
+        $token = tap(Token::make(token: null, handler: TokenHandler::class, data: [
+            'id' => $entry->id(),
+        ]))->save();
 
-        return $parsed['scheme'].'://'.$parsed['host'].$port;
+        return $entry->absoluteUrl().'?token='.$token->token();
     }
 }
