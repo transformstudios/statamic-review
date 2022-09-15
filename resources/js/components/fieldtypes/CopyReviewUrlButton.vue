@@ -12,40 +12,24 @@
 </template>
 
 <script>
+    export default {
+        mixins: [Fieldtype],
+        inject: ["storeName"],
 
-export default {
+        computed: {
+            published() {
+                return this.$store.state.publish[this.storeName].values.published;
+            },
 
-    mixins: [Fieldtype],
-    inject: [
-        'storeName'
-    ],
-
-    data() {
-        return {
-            //
-        };
-    },
-    computed: {
-        entryUrl() {
-            return this.meta.site_url + '/!/review/' + this.id;
+            show() {
+                return this.meta.has_revision || !this.published;
+            },
         },
-        id() {
-            return this.$store.state.publish[this.storeName].values.id;
+        methods: {
+            copyToClipboard() {
+                navigator.clipboard.writeText(this.meta.site_url);
+                this.$toast.success(__("Review URL copied to clipboard"));
+            },
         },
-        published() {
-            return this.$store.state.publish[this.storeName].values.published;
-        },
-
-        show() {
-            return this.meta.has_revision || !this.published;
-        }
-    },
-    methods: {
-        copyToClipboard() {
-            navigator.clipboard.writeText(this.entryUrl);
-            this.$toast.success(__('Review URL copied to clipboard'));
-        },
-
-    }
-}
+    };
 </script>

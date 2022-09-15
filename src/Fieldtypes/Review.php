@@ -2,24 +2,15 @@
 
 namespace TransformStudios\Review\Fieldtypes;
 
-use Illuminate\Support\Arr;
 use Statamic\Entries\Collection;
 use Statamic\Entries\Entry;
-use Statamic\Facades\Site;
+use Statamic\Facades\Token;
 use Statamic\Fields\Fieldtype;
+use TransformStudios\Review\TokenHandler;
 
 class Review extends Fieldtype
 {
     protected $component = 'copy_review_url';
-
-    /**
-     * The blank/default value.
-     *
-     * @return array
-     */
-    public function defaultValue()
-    {
-    }
 
     public function icon()
     {
@@ -44,33 +35,13 @@ class Review extends Fieldtype
         ];
     }
 
-    /**
-     * Pre-process the data before it gets sent to the publish page.
-     *
-     * @param  mixed  $data
-     * @return array|mixed
-     */
-    public function preProcess($data)
-    {
-        return $data;
-    }
-
-    /**
-     * Process the data before it gets saved.
-     *
-     * @param  mixed  $data
-     * @return array|mixed
-     */
-    public function process($data)
-    {
-        return $data;
-    }
-
     private function makeUrl(Entry $entry): string
     {
-        $parsed = parse_url(Site::get($entry->locale())->url());
-        $port = Arr::has($parsed, 'port') ? ":{$parsed['port']}" : '';
+        /** @var \Statamic\Tokens\Token */
+        $token = tap(Token::make(token: null, handler: TokenHandler::class, data: [
+            'id' => $entry->id(),
+        ]))->save();
 
-        return $parsed['scheme'].'://'.$parsed['host'].$port;
+        return $entry->absoluteUrl().'?token='.$token->token();
     }
 }
