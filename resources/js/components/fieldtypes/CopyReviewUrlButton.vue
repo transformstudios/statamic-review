@@ -14,15 +14,30 @@
 <script>
     export default {
         mixins: [Fieldtype],
-        inject: ["storeName"],
 
         computed: {
-            published() {
-                return this.$store.state.publish[this.storeName].values.published;
+            publishForm() {
+                let vm = this;
+                while (true) {
+                    let parent = vm.$parent;
+
+                    if (!parent) {
+                        return false;
+                    }
+
+                    if (parent.$options._componentTag == "entry-publish-form") {
+                        return parent;
+                    }
+                    vm = parent;
+                }
             },
 
             show() {
-                return this.meta.has_revision || !this.published;
+                return (
+                    this.publishForm &&
+                    !this.publishForm.isDirty &&
+                    (this.publishForm.isWorkingCopy || !this.published)
+                );
             },
         },
         methods: {
