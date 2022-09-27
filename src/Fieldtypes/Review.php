@@ -29,10 +29,7 @@ class Review extends Fieldtype
             return [];
         }
 
-        return [
-            'site_url' => $this->makeUrl($entry),
-            'has_revision' => $entry->hasWorkingCopy(),
-        ];
+        return ['site_url' => $this->makeUrl($entry)];
     }
 
     private function makeUrl(Entry $entry): string
