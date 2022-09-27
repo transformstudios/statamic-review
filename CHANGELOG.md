@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.6.0 - 2022-09-27
+
+### 🔧 Improved
+
+- Smarter enabling [@edalzell](https://github.com/edalzell) (#22)
+- 🔄 Synced file(s) with edalzell/.github [@edalzell](https://github.com/edalzell) (#23)
+
 ## v3.5.0 - 2022-09-15
 
 ### 🚀 New
