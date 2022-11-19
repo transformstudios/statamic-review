@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.7.0 - 2022-11-19
+
+### 🔧 Improved
+
+- 🔄 Synced file(s) with edalzell/.github [@edalzell](https://github.com/edalzell) (#26)
+- Set Review link expiry [@edalzell](https://github.com/edalzell) (#25)
+
 ## v3.6.0 - 2022-09-27
 
 ### 🔧 Improved
