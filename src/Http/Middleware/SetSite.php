@@ -10,7 +10,12 @@ class SetSite
 {
     public function handle($request, Closure $next)
     {
-        Site::setCurrent(Entry::find($request->id)->site()->handle());
+        abort_if(
+            ! $entry = Entry::find($request->id),
+            404
+        );
+
+        Site::setCurrent($entry->site()->handle());
 
         return $next($request);
     }
