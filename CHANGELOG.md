@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.7.2 - 2023-01-23
+
+### 🐛 Fixed
+
+- Fix release [@edalzell](https://github.com/edalzell) (#29)
+
 ## v3.7.1 - 2023-01-23
 
 ### 🐛 Fixed
