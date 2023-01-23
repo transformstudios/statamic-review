@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.7.1 - 2023-01-23
+
+### 🐛 Fixed
+
+- 404 if entry not found [@edalzell](https://github.com/edalzell) (#28)
+
 ## v3.7.0 - 2022-11-19
 
 ### 🔧 Improved
