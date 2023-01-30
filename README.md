@@ -6,6 +6,16 @@ Configuration:
 * publish the config via `php artisan vendor:publish --tag=review-config`
 * add the handles of the collections you'd like to have reviewed
 
+**Localization:**
+
+To localize the button, add a lang file in `/resources/lang` with the name matching the locale, like `fr.json`. In it put your translation:
+
+```
+{
+    "Copy Review URL to Clipboard": "Translate Me!"
+}
+```
+
 **Two ways to get that URL:**
 
 1. The entry listing via the entry's Open Review action: ![screenshot of review action](https://github.com/transformstudios/statamic-review/raw/main/img/Open%20Review%20Action.png "Review Action")
