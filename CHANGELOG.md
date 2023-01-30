@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.8.0 - 2023-01-30
+
+### 🚀 New
+
+- Make button localizable [@edalzell](https://github.com/edalzell) (#31)
+
 ## v3.7.2 - 2023-01-23
 
 ### 🐛 Fixed
