@@ -5,8 +5,8 @@
             class="btn"
             :disabled="!show"
             @click="copyToClipboard"
+            v-text="__('Copy Review URL to Clipboard')"
         >
-            Copy Review URL to Clipboard
         </button>
     </div>
 </template>
