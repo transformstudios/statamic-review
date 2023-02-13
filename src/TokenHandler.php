@@ -13,7 +13,7 @@ class TokenHandler
         /** @var \Statamic\Entries\Entry */
         $entry = Entry::find($token->get('id'));
 
-        if ($entry->published()) {
+        if (! $entry->hasWorkingCopy() && $entry->published()) {
             return redirect($entry->url());
         }
 

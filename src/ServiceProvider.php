@@ -16,10 +16,6 @@ class ServiceProvider extends AddonServiceProvider
         Review::class,
     ];
 
-    protected $routes = [
-        'actions' => __DIR__.'/../routes/actions.php',
-    ];
-
     protected $scripts = [
         __DIR__.'/../dist/js/cp.js',
     ];
