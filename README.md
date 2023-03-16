@@ -26,7 +26,6 @@ To localize the button, add a lang file in `/resources/lang` with the name match
 * Button will only work if:
   * the field was added to a blueprint and **not** a fieldset (Statamic issue)
   * the site is served via `https`
-  * there is a **full** url in the `site.url` in your `sites.php`
   * content is NOT published
 * URLs are public, anyone can view them.
 * Once the content is published, visiting that URL redirects to the actual content, unless there is a working copy.
