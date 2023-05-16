@@ -30,7 +30,7 @@ class Review extends Fieldtype
             return [];
         }
 
-        return ['site_url' => $this->makeUrl($entry)];
+        return ['site_url' => ray()->pass($this->makeUrl($entry))];
     }
 
     private function makeUrl(Entry $entry): string
@@ -39,8 +39,8 @@ class Review extends Fieldtype
         $token = tap(
             TokenFacade::make(token: null, handler: TokenHandler::class, data: ['id' => $entry->id()]),
             fn (Token $token) => $token
-                    ->expireAt(now()->addMonths(6))
-                    ->save()
+                ->expireAt(now()->addMonths(6))
+                ->save()
         );
 
         return $entry->absoluteUrl().'?token='.$token->token();

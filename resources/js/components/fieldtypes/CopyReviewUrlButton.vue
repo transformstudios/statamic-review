@@ -16,6 +16,12 @@
         mixins: [Fieldtype],
 
         computed: {
+            isFuture() {
+                let entryDate = moment(this.publishForm.values.date);
+
+                return entryDate.isAfter(moment());
+            },
+
             publishForm() {
                 let vm = this;
                 while (true) {
@@ -33,10 +39,18 @@
             },
 
             show() {
+                if (!this.publishForm) {
+                    return false;
+                }
+
+                if (this.publishForm.isDirty) {
+                    return false;
+                }
+
                 return (
                     this.publishForm &&
                     !this.publishForm.isDirty &&
-                    (this.publishForm.isWorkingCopy || !this.published)
+                    (this.publishForm.isWorkingCopy || !this.publishForm.published)
                 );
             },
         },
