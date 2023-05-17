@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.2 - 2023-05-17
+
+### 🐛 Fixed
+
+- Fix where assets are downloaded to [@edalzell](https://github.com/edalzell) (#41)
+
 ## v4.0.1 - 2023-05-17
 
 ### 🐛 Fixed
