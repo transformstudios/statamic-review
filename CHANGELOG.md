@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.1 - 2023-05-17
+
+### 🐛 Fixed
+
+- Fix listing action [@edalzell](https://github.com/edalzell) (#40)
+
 ## v4.0 - 2023-05-17
 
 ### 🚀 New
