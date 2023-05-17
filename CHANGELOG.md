@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.0 - 2023-05-17
+
+### 🚀 New
+
+- Update to Statamic v4 [@edalzell](https://github.com/edalzell) (#39)
+
+### 🔧 Improved
+
+- Full URL not needed anymore [@robdekort](https://github.com/robdekort) (#34)
+
 ## v3.8.1 - 2023-02-13
 
 ### 🐛 Fixed
