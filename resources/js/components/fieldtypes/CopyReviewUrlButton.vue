@@ -16,10 +16,18 @@
         mixins: [Fieldtype],
 
         computed: {
-            isFuture() {
-                let entryDate = moment(this.publishForm.values.date);
+            entryDate() {
+                let dateTime = this.publishForm.values.date;
 
-                return entryDate.isAfter(moment());
+                return moment(dateTime.date + 'T' + dateTime.time, 'YYYY-MM-DDTHH:mm');
+            },
+
+            isFuture() {
+                return this.entryDate.isAfter(moment());
+            },
+
+            isWorkingCopy() {
+                return this.publishForm.revisionsEnabled && this.publishForm.isWorkingCopy;
             },
 
             publishForm() {
@@ -47,18 +55,16 @@
                     return false;
                 }
 
-                return (
-                    this.publishForm &&
-                    !this.publishForm.isDirty &&
-                    (this.publishForm.isWorkingCopy || !this.publishForm.published)
-                );
+                return this.isWorkingCopy || !this.publishForm.published || this.isFuture;
             },
+
         },
         methods: {
             copyToClipboard() {
                 navigator.clipboard.writeText(this.meta.site_url);
                 this.$toast.success(__("Review URL copied to clipboard"));
             },
+
         },
     };
 </script>
