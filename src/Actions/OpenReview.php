@@ -4,15 +4,17 @@ namespace TransformStudios\Review\Actions;
 
 use Statamic\Actions\Action;
 use Statamic\Entries\Entry;
+use TransformStudios\Review\Support\URL;
 
 class OpenReview extends Action
 {
     protected $confirm = false;
+
     public static $title = 'Open Review';
 
     public function redirect($items, $values)
     {
-        return route('statamic.review.show', ['id' => $items->first()->id()]);
+        return URL::reviewUrl($items->first());
     }
 
     public function visibleTo($item)

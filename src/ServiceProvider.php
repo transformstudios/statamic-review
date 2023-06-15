@@ -16,7 +16,9 @@ class ServiceProvider extends AddonServiceProvider
         Review::class,
     ];
 
-    protected $scripts = [
-        __DIR__.'/../dist/js/cp.js',
+    protected $vite = [
+        'input' => ['resources/js/cp.js'],
+        'publicDirectory' => 'dist',
+        'hotFile' => __DIR__.'/../dist/hot',
     ];
 }

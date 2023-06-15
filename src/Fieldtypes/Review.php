@@ -4,10 +4,8 @@ namespace TransformStudios\Review\Fieldtypes;
 
 use Statamic\Entries\Collection;
 use Statamic\Entries\Entry;
-use Statamic\Facades\Token as TokenFacade;
 use Statamic\Fields\Fieldtype;
-use Statamic\Tokens\Token;
-use TransformStudios\Review\TokenHandler;
+use TransformStudios\Review\Support\URL;
 
 class Review extends Fieldtype
 {
@@ -30,19 +28,6 @@ class Review extends Fieldtype
             return [];
         }
 
-        return ['site_url' => ray()->pass($this->makeUrl($entry))];
-    }
-
-    private function makeUrl(Entry $entry): string
-    {
-        /** @var \Statamic\Tokens\Token */
-        $token = tap(
-            TokenFacade::make(token: null, handler: TokenHandler::class, data: ['id' => $entry->id()]),
-            fn (Token $token) => $token
-                ->expireAt(now()->addMonths(6))
-                ->save()
-        );
-
-        return $entry->absoluteUrl().'?token='.$token->token();
+        return ['site_url' => URL::reviewUrl($entry)];
     }
 }
