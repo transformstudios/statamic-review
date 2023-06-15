@@ -16,6 +16,24 @@
         mixins: [Fieldtype],
 
         computed: {
+            entryDate() {
+                let dateTime = this.publishForm.values.date;
+
+                if (!dateTime) {
+                    return null
+                }
+
+                return moment(dateTime.date + 'T' + dateTime.time, 'YYYY-MM-DDTHH:mm');
+            },
+
+            isFuture() {
+                return this.entryDate?.isAfter(moment());
+            },
+
+            isWorkingCopy() {
+                return this.publishForm.revisionsEnabled && this.publishForm.isWorkingCopy;
+            },
+
             publishForm() {
                 let vm = this;
                 while (true) {
@@ -33,18 +51,25 @@
             },
 
             show() {
-                return (
-                    this.publishForm &&
-                    !this.publishForm.isDirty &&
-                    (this.publishForm.isWorkingCopy || !this.published)
-                );
+                if (!this.publishForm) {
+                    return false;
+                }
+
+                if (this.publishForm.isDirty) {
+                    return false;
+                }
+
+                return this.isWorkingCopy || !this.publishForm.published || this.isFuture;
             },
+
         },
+
         methods: {
             copyToClipboard() {
                 navigator.clipboard.writeText(this.meta.site_url);
                 this.$toast.success(__("Review URL copied to clipboard"));
             },
+
         },
     };
 </script>

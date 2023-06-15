@@ -4,6 +4,7 @@ namespace TransformStudios\Review\Actions;
 
 use Statamic\Actions\Action;
 use Statamic\Entries\Entry;
+use Statamic\Support\Arr;
 use TransformStudios\Review\Support\URL;
 
 class OpenReview extends Action
@@ -19,9 +20,19 @@ class OpenReview extends Action
 
     public function visibleTo($item)
     {
-        return $item instanceof Entry &&
-               (! $item->published() || $item->hasWorkingCopy()) &&
-               in_array($item->collectionHandle(), config('review.collections'));
+        if (! $item instanceof Entry) {
+            return false;
+        }
+
+        $fields = $item->blueprint()->fields()->items();
+
+        if ($fields->doesntContain(fn (array $value) => Arr::get($value, 'field.type') === 'review')) {
+            return false;
+        }
+
+        return ! $item->published() ||
+               $item->hasWorkingCopy() ||
+               ($item->collection()->dated() && $item->date()->isFuture());
     }
 
     public function visibleToBulk($items)
