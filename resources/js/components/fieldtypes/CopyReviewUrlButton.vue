@@ -63,6 +63,7 @@
             },
 
         },
+
         methods: {
             copyToClipboard() {
                 navigator.clipboard.writeText(this.meta.site_url);
