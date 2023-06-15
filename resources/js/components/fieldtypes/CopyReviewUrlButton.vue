@@ -19,11 +19,15 @@
             entryDate() {
                 let dateTime = this.publishForm.values.date;
 
+                if (!dateTime) {
+                    return null
+                }
+
                 return moment(dateTime.date + 'T' + dateTime.time, 'YYYY-MM-DDTHH:mm');
             },
 
             isFuture() {
-                return this.entryDate.isAfter(moment());
+                return this.entryDate?.isAfter(moment());
             },
 
             isWorkingCopy() {
