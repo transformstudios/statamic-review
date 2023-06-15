@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.0 - 2023-06-15
+
+### 🚀 New
+
+- Support future dated entries [@edalzell](https://github.com/edalzell) (#42)
+
 ## v4.0.2 - 2023-05-17
 
 ### 🐛 Fixed
