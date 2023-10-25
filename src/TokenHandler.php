@@ -12,7 +12,9 @@ class TokenHandler
     public function handle(Token $token, $request, Closure $next)
     {
         /** @var \Statamic\Entries\Entry */
-        $entry = EntryFacade::find($token->get('id'));
+        if (! $entry = EntryFacade::find($token->token())) {
+            return $next($request);
+        }
 
         if ($this->isLive($entry)) {
             return redirect($entry->url());
