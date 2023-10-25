@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.1 - 2023-10-25
+
+### 🐛 Fixed
+
+- Persist the token [@edalzell](https://github.com/edalzell) (#44)
+
 ## v4.1.0 - 2023-06-15
 
 ### 🚀 New
