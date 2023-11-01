@@ -48,9 +48,14 @@ class TokenHandler
             $entry->date(now());
         }
 
+        // if the revision changes the slug, the url is wrong and the review link 404s
+        $originalSlug = $entry->slug();
+
         if ($entry->hasWorkingCopy()) {
             $entry = $entry->fromWorkingCopy();
         }
+
+        $entry->slug($originalSlug);
 
         return $entry->published(true);
     }
