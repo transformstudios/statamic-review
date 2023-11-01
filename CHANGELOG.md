@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.2 - 2023-11-01
+
+### 🐛 Fixed
+
+- Keep the slug [@edalzell](https://github.com/edalzell) (#45)
+
 ## v4.1.1 - 2023-10-25
 
 ### 🐛 Fixed
