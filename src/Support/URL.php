@@ -14,7 +14,7 @@ class URL
         /** @var \Statamic\Tokens\Token */
         if (! $token = TokenFacade::find($entry->id())) {
             $token = tap(
-                TokenFacade::make(token: $entry->id(), handler: TokenHandler::class, data: [], cacheable: false),
+                TokenFacade::make(token: $entry->id(), handler: TokenHandler::class),
                 fn (Token $token) => $token->expireAt(now()->addMonths(6))->save()
             );
         }
