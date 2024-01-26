@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.3 - 2024-01-26
+
+### 🐛 Fixed
+
+- Don't cache Review URLs [@edalzell](https://github.com/edalzell) (#46)
+
 ## v4.1.2 - 2023-11-01
 
 ### 🐛 Fixed
