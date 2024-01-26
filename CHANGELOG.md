@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.4 - 2024-01-26
+
+### 🐛 Fixed
+
+- Cacheable ain't a thing no more [@edalzell](https://github.com/edalzell) (#48)
+
 ## v4.1.3 - 2024-01-26
 
 ### 🐛 Fixed
