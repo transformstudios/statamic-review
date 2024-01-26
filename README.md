@@ -2,10 +2,6 @@ Review allows you to share unpublished entries or revisions with collaborators w
 
 For example, you can create a draft `About Us` page and give folks a URL to view that draft content. You can also share a working copy, if you're using revisions.
 
-Configuration:
-* publish the config via `php artisan vendor:publish --tag=review-config`
-* add the handles of the collections you'd like to have reviewed
-
 **Localization:**
 
 To localize the button, add a lang file in `/resources/lang` with the name matching the locale, like `fr.json`. In it put your translation:
