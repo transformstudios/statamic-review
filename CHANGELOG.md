@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.0 - 2024-05-15
+
+### 🚀 New
+
+- Statamic 5/Laravel 11 [@edalzell](https://github.com/edalzell) (#50)
+
 ## v4.1.4 - 2024-01-26
 
 ### 🐛 Fixed
