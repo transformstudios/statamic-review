@@ -4,3 +4,5 @@
 /yarn.lock
 /js/cp.js
 /package-lock.json
+/vendor
+/composer.lock
