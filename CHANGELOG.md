@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.0.1 - 2025-03-07
+
+### 🐛 Fixed
+
+- Parent might be an empty Entry [@edalzell](https://github.com/edalzell) (#54)
+
 ## v5.0 - 2024-05-15
 
 ### 🚀 New
