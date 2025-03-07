@@ -22,9 +22,15 @@ class Review extends Fieldtype
             return [];
         }
 
-        // when it's a new entry the "parent" is the collection
+        // when it's a new entry the "parent" might be a collection
         // in this case, we can't show it anyway so return empty
         if ($entry instanceof Collection) {
+            return [];
+        }
+
+        // if there's a computed field in the entry's collection that uses augmentation,
+        // this maybe be an empty entry, without an id
+        if (is_null($entry->id())) {
             return [];
         }
 
