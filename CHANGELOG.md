@@ -1,5 +1,15 @@
 # Changelog
 
+## v5.1.0 - 2025-03-20
+
+### 🚀 New
+
+- Laravel 12.x Compatibility [@laravel-shift](https://github.com/laravel-shift) (#53)
+
+### 🧰 Maintenance
+
+- Attempt to fix action [@edalzell](https://github.com/edalzell) (#56)
+
 ## v5.0.1 - 2025-03-07
 
 ### 🐛 Fixed
