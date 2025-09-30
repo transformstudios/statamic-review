@@ -57,6 +57,6 @@ class TokenHandler
 
         $entry->slug($originalSlug);
 
-        return $entry->published(true);
+        return $entry->setSupplement('live_preview', true)->published(true);
     }
 }
