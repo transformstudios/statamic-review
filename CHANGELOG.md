@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.2.0 - 2025-10-01
+
+### 🚀 New
+
+- Add `is_review` variable [@edalzell](https://github.com/edalzell) (#57)
+
 ## v5.1.0 - 2025-03-20
 
 ### 🚀 New
