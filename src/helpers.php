@@ -1,15 +1,12 @@
 <?php
 
-namespace TransformStudios\Review\Support;
-
 use Statamic\Entries\Entry;
 use Statamic\Facades\Token as TokenFacade;
 use Statamic\Tokens\Token;
 use TransformStudios\Review\TokenHandler;
 
-class URL
-{
-    public static function reviewUrl(Entry $entry): string
+if (! function_exists('review_url')) {
+    function review_url(Entry $entry): string
     {
         /** @var \Statamic\Tokens\Token */
         if (! $token = TokenFacade::find($entry->id())) {

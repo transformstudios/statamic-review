@@ -3,7 +3,6 @@
 namespace TransformStudios\Review\Fieldtypes;
 
 use Statamic\Entries\Collection;
-use Statamic\Entries\Entry;
 use Statamic\Fields\Fieldtype;
 use TransformStudios\Review\Support\URL;
 
@@ -34,6 +33,6 @@ class Review extends Fieldtype
             return [];
         }
 
-        return ['site_url' => URL::reviewUrl($entry)];
+        return ['site_url' => review_url($entry)];
     }
 }

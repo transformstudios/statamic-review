@@ -1,8 +1,6 @@
-/dist
 /node_modules
-/mix-manifest.json
-/yarn.lock
-/js/cp.js
-/package-lock.json
+/resources/dist
 /vendor
-/composer.lock
+/js/cp.js
+package-lock.json
+composer.lock
