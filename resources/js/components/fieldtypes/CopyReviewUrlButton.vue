@@ -14,27 +14,16 @@ import { Fieldtype } from '@statamic/cms';
 import { toast } from '@statamic/cms/api';
 import { Button, injectPublishContext } from '@statamic/cms/ui';
 
-const { isDirty, isWorkingCopy, revisionsEnabled, values } = injectPublishContext();
 const props = defineProps(Fieldtype.props);
+const { isDirty, isWorkingCopy, revisionsEnabled, values } = injectPublishContext();
 
-const entryDate = computed(() => {
-    let dateTime = values.value.date;
-
-    if (!dateTime) {
-        return null
-    }
-
-    return new Date(dateTime);
-});
-
+const entryDate = computed(() => values.value.date ? new Date(values.value.date) : null);
 const isFuture = computed(() => entryDate.value > Date.now());
-const show = computed(() => {
-    if (isDirty.value) {
-        return false;
-    }
-
-    return isWorkingCopy.value || !values.value.published || isFuture.value;
-});
+const show = computed(() => !isDirty.value &&
+    ((isWorkingCopy.value && revisionsEnabled.value) ||
+    !values.value.published ||
+    isFuture.value)
+);
 
 function copyToClipboard() {
     navigator.clipboard.writeText(props.meta.site_url);
