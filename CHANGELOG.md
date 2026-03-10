@@ -1,5 +1,9 @@
 # Changelog
 
+## v6.0.0-alpha.1 - 2026-03-10
+
+- Update to Statamic v6 [@edalzell](https://github.com/edalzell) (#60)
+
 ## v5.2.0 - 2025-10-01
 
 ### 🚀 New
