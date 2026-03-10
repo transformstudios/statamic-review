@@ -1,75 +1,32 @@
 <template>
     <div>
-        <button
-            type="button"
-            class="btn"
-            :disabled="!show"
+        <Button
             @click="copyToClipboard"
-            v-text="__('Copy Review URL to Clipboard')"
-        >
-        </button>
+            :disabled="!show"
+            :text="__('Copy Review URL to Clipboard')"
+        />
     </div>
 </template>
 
-<script>
-    export default {
-        mixins: [Fieldtype],
+<script setup>
+import { computed } from 'vue';
+import { Fieldtype } from '@statamic/cms';
+import { toast } from '@statamic/cms/api';
+import { Button, injectPublishContext } from '@statamic/cms/ui';
 
-        computed: {
-            entryDate() {
-                let dateTime = this.publishForm.values.date;
+const props = defineProps(Fieldtype.props);
+const { isDirty, isWorkingCopy, revisionsEnabled, values } = injectPublishContext();
 
-                if (!dateTime) {
-                    return null
-                }
+const entryDate = computed(() => values.value.date ? new Date(values.value.date) : null);
+const isFuture = computed(() => entryDate.value > Date.now());
+const show = computed(() => !isDirty.value &&
+    ((isWorkingCopy.value && revisionsEnabled.value) ||
+    !values.value.published ||
+    isFuture.value)
+);
 
-                return moment(dateTime.date + 'T' + dateTime.time, 'YYYY-MM-DDTHH:mm');
-            },
-
-            isFuture() {
-                return this.entryDate?.isAfter(moment());
-            },
-
-            isWorkingCopy() {
-                return this.publishForm.revisionsEnabled && this.publishForm.isWorkingCopy;
-            },
-
-            publishForm() {
-                let vm = this;
-                while (true) {
-                    let parent = vm.$parent;
-
-                    if (!parent) {
-                        return false;
-                    }
-
-                    if (parent.$options._componentTag == "entry-publish-form") {
-                        return parent;
-                    }
-                    vm = parent;
-                }
-            },
-
-            show() {
-                if (!this.publishForm) {
-                    return false;
-                }
-
-                if (this.publishForm.isDirty) {
-                    return false;
-                }
-
-                return this.isWorkingCopy || !this.publishForm.published || this.isFuture;
-            },
-
-        },
-
-        methods: {
-            copyToClipboard() {
-                navigator.clipboard.writeText(this.meta.site_url);
-                this.$toast.success(__("Review URL copied to clipboard"));
-            },
-
-        },
-    };
+function copyToClipboard() {
+    navigator.clipboard.writeText(props.meta.site_url);
+    toast.success(__("Review URL copied to clipboard"));
+};
 </script>
