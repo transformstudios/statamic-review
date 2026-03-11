@@ -1,6 +1,5 @@
-/dist
 /node_modules
+/resources/dist
 /vendor
-/js/cp.js
-package-lock.json
 composer.lock
+package-lock.json
