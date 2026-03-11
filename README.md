@@ -12,10 +12,9 @@ To localize the button, add a lang file in `/resources/lang` with the name match
 }
 ```
 
-**Two ways to get that URL:**
+**Getting the Review URL:**
 
-1. The entry listing via the entry's Open Review action: ![screenshot of review action](https://github.com/transformstudios/statamic-review/raw/main/img/Open%20Review%20Action.png "Review Action")
-2. The Review fieldtype; I'd recommend adding to the top of the sidebar of any entry blueprint: ![screenshot of copy review url button](https://github.com/transformstudios/statamic-review/raw/main/img/Copy%20URL%20Button.png "Copy Review URL Button")
+Review fieldtype: Recommend adding it to the top of the sidebar of any entry blueprint: ![screenshot of copy review url button](https://github.com/transformstudios/statamic-review/raw/main/img/Copy%20URL%20Button.png "Copy Review URL Button")
 
 **Please note**:
 
