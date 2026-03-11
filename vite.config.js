@@ -7,7 +7,8 @@ export default defineConfig({
     plugins: [
         laravel({
             input: ['resources/css/cp.css', 'resources/js/cp.js'],
-            publicDirectory: 'dist',
+            publicDirectory: 'resources/dist',
+            hotFile: 'resources/dist/hot',
         }),
         statamic(),
         tailwindcss()
