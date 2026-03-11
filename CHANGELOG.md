@@ -1,5 +1,12 @@
 # Changelog
 
+## v6.0.0-alpha.3 - 2026-03-11
+
+### 🐛 Fixed
+
+- Put assets in `resources` [@edalzell](https://github.com/edalzell) (#62)
+- Add composer install to asset build steps [@edalzell](https://github.com/edalzell) (#61)
+
 ## v6.0.0-alpha.2 - 2026-03-10
 
 - Update to Statamic v6 [@edalzell](https://github.com/edalzell) (#60)
