@@ -27,8 +27,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        uses: php-actions/composer@v6
+      - name: Install Composer Dependencies
+        run: composer install
 
       - name: Install dependencies
         run: npm install
