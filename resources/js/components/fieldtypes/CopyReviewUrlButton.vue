@@ -3,7 +3,7 @@
         <Button
             @click="copyToClipboard"
             :disabled="!show"
-            :text="__('Copy Review URL to Clipboard')"
+            :text="__('Copy Review URL')"
         />
     </div>
 </template>
@@ -27,6 +27,6 @@ const show = computed(() => !isDirty.value &&
 
 function copyToClipboard() {
     navigator.clipboard.writeText(props.meta.site_url);
-    toast.success(__("Review URL copied to clipboard"));
+    toast.success(__("Review URL copied"));
 };
 </script>
