@@ -39,6 +39,6 @@ To localize the Review fieldtype button text, add a language file in `/resources
 
 ```
 {
-"Copy Review URL": "انسخ عنوان URL الخاص بالمراجعة"
+  "Copy Review URL": "انسخ عنوان URL الخاص بالمراجعة"
 }
 ```
