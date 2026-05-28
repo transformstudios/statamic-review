@@ -35,7 +35,7 @@ The "Copy Review URL" button works when:
 
 ## Localization
 
-To localize the Review fieldtype button text, add a language file in `/resources/lang` matching your locale. For example `ar.json`:
+To localize the Review fieldtype button text, add a language file in `/lang` matching your locale. For example `ar.json`:
 
 ```
 {
